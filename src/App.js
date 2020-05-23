@@ -10,7 +10,7 @@ function App() {
      <Header/>
      <div className="container mt-5 ">
        <div className="row">
-        <div className="col-8 mx-auto">
+        <div className="col-12">
         <Formulario/>
         </div>
        </div>
