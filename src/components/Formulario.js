@@ -1,27 +1,37 @@
 import React, { useState, useContext } from "react";
 import { CategoriasContext } from "../context/CategoriaContext";
+import {RecetaContext} from "../context/RecetaContext"
 import { Form } from "react-bootstrap";
 
 const Formulario = () => {
   const { categoria } = useContext(CategoriasContext);
+  const {setBusquedaReceta, setConsulta } = useContext(RecetaContext)
 
   const [busqueda, setBusqueda] = useState({
     nombre: "",
     categoria: "",
   });
 
+  // obtener Datos de los Inputs
   const obtenerDatos = (e) => {
     setBusqueda({
       ...busqueda,
       [e.target.name] : e.target.value
       
     });
-    console.log(e.target.value );
   };
+
+
+  // consultar datos a la APi
+  const consultarDatos = (e) => {
+    e.preventDefault()
+    setConsulta(true)
+    setBusquedaReceta(busqueda)
+  }
  
 
   return (
-    <Form className="">
+    <Form onSubmit={consultarDatos} >
       <fieldset>
         <legend className="text-center mb-3">
           Buscar Bebidas por Categorias

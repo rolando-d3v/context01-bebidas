@@ -35,6 +35,7 @@
     transition: width 0.3s ease;
     border-right: 1px #4d606e solid;
     padding-top: 15px;
+    z-index: 1;
   }
   
   .sidebar .sidebar-position {
