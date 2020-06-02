@@ -16,8 +16,7 @@ const Formulario = () => {
   const obtenerDatos = (e) => {
     setBusqueda({
       ...busqueda,
-      [e.target.name] : e.target.value
-      
+      [e.target.name] : e.target.value,
     });
   };
 
